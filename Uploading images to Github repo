@@ -24,15 +24,34 @@ git push -u origin master
 $ cd Documents/GitHub/myTestRepo
 # do a "git init" to see the documents
 $ git init
-# The following pops up: Initialized empty Git repository in C:/Users/Bijie/Documents/GitHub/myTestRepo/.git/
+# Then see the following: 
+### Initialized empty Git repository in C:/Users/Bijie/Documents/GitHub/myTestRepo/.git/
 # The repo is not connected to Github. In order to create snapshots, type: 
 $ git add .
 # Do a "git commit":
 $ git commit -m "add the first file"
 # Then see the following: 
-# [master (root-commit) e5b3fa7] add the first file
-# 1 file changed, 1 insertion(+)
-# create mode 100644 myfile.txt
+### [master (root-commit) e5b3fa7] add the first file
+### 1 file changed, 1 insertion(+)
+### create mode 100644 myfile.txt
+# We have a snapshot in the local repo, but it's all saved on the drive, nothing is on Github right now.
+
+# To make it on Github, return to the "Quick setup" webpage when we created the new repo on Github
+# Copy the first line of the box "Push an existing repository from the command line"
+# Paste to Git, make a remote and link to the repository
+# copy the second line of the box "Push an existing repository from the command line"
+# Paste to Git, then it will ask you the credentials of Github
+$ git push -u origin master
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 229 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/BBie/myTestRepo.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+
+# At this moment, myfile.txt is available in Github: BBie/myTestRepo
+
+
 
 
 
