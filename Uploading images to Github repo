@@ -19,8 +19,22 @@ git push -u origin master
 # Create a new folder on your computer called "myTestRepo", in the empty folder, create a txt file called "myfile"
 # Open "myfile.txt", and wtite anything you want, even just some random words.
 # Save and close the txt file
-# Open Git Bash, write the following:
-cd Documents/GitHub/myTestRepo
+
+# Open Git Bash, type the following:
+$ cd Documents/GitHub/myTestRepo
+# do a "git init" to see the documents
+$ git init
+# The following pops up: Initialized empty Git repository in C:/Users/Bijie/Documents/GitHub/myTestRepo/.git/
+# The repo is not connected to Github. In order to create snapshots, type: 
+$ git add .
+# Do a "git commit":
+$ git commit -m "add the first file"
+# Then see the following: 
+# [master (root-commit) e5b3fa7] add the first file
+# 1 file changed, 1 insertion(+)
+# create mode 100644 myfile.txt
+
+
 
 
 
