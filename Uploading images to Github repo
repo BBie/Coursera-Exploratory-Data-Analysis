@@ -1,6 +1,6 @@
 ## Internet Solution 1
 ## link: http://stackoverflow.com/questions/23596369/how-to-upload-images-like-png-into-github-repository
-## Main question: how to upload an image file into my repo in Git?
+## Main problem: how to upload an image file into my repo in Git?
 # Solution: 
 # You need to add and commit the png file to your local repo first. Then push the updates to the remote server.
 git add xxx.png
@@ -8,5 +8,15 @@ git commit -m 'add png file'
 git remote add origin https://github.com/xxx.git
 git push -u origin master
 
+git add xxx.png
+git commit -m 'add png file'
+git remote add origin https://github.com/xxx.git
+git push -u origin master
+
+
+## Internet Solution 2
+## link: https://www.youtube.com/watch?v=GCBROgPCox0
+## Main problem: Uploading to GitHub with Git
+# Solution:
 
 
