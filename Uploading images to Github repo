@@ -17,11 +17,11 @@ git push -u origin master
 # Solution:
 # Create a new repo on Github "myTestRepo"
 # Create a new folder on your computer called "myTestRepo", in the empty folder, create a txt file called "myfile"
-# Open "myfile.txt", and wtite anything you want, even just some random words.
+# Open "myfile.txt", and type anything you want, even just some random words.
 # Save and close the txt file
 
 # Open Git Bash, type the following:
-$ cd Documents/GitHub/myTestRepo
+$ cd Documents/GitHub/myTestRepo   
 # do a "git init" to see the documents
 $ git init
 # Then see the following: 
@@ -52,10 +52,29 @@ Branch master set up to track remote branch master from origin.
 # At this moment, myfile.txt is available in Github: BBie/myTestRepo
 
 
+#### Problem solving: # fatal: remote origin already exists
+### link: http://stackoverflow.com/questions/10904339/github-fatal-remote-origin-already-exists
+# As the error message indicates, there is already a remote configured with the same name. 
+# So you can either add the new remote with a different name or update the existing one if you don't need it:
+# To add a new remote, called for example github instead of origin (which obviously already exists in your system), do the following:
+# $ git remote add github git@github.com:ppreyer/first_app.git
+# Remember though, everywhere in the tutorial you see "origin" you should replace it with "github". 
+# For example $ git push origin master should now be $ git push github master.
+# However, if you want to see what that origin which already exists is, you can do a $ git remote -v. 
+# If you think this is there by some error, you can update it like so:
+# $ git remote set-url origin git@github.com:ppreyer/first_app.git
 
 
 
+$ cd Documents/GitHub/Plotting
 
 
+git add plot1.png
+git add plot2.png
+git add plot3.png
+git add plot4.png
+git commit -m "add png file"
+git remote add origin https://github.com/BBie/Plot.git
+git push -u origin master
 
-
+git remote add github git@github.com:BBie/Plot.git
