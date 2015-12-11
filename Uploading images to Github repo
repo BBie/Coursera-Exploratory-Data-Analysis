@@ -52,29 +52,69 @@ Branch master set up to track remote branch master from origin.
 # At this moment, myfile.txt is available in Github: BBie/myTestRepo
 
 
-#### Problem solving: # fatal: remote origin already exists
-### link: http://stackoverflow.com/questions/10904339/github-fatal-remote-origin-already-exists
-# As the error message indicates, there is already a remote configured with the same name. 
-# So you can either add the new remote with a different name or update the existing one if you don't need it:
-# To add a new remote, called for example github instead of origin (which obviously already exists in your system), do the following:
-# $ git remote add github git@github.com:ppreyer/first_app.git
-# Remember though, everywhere in the tutorial you see "origin" you should replace it with "github". 
-# For example $ git push origin master should now be $ git push github master.
-# However, if you want to see what that origin which already exists is, you can do a $ git remote -v. 
-# If you think this is there by some error, you can update it like so:
-# $ git remote set-url origin git@github.com:ppreyer/first_app.git
+
+#### my codes:
+
+$ cd C:/Users/Bijie/Documents/GitHub/ExData_Plotting1
+
+Bijie@Bijie-PC MINGW64 ~/Documents/GitHub/ExData_Plotting1 (master)
+$ git add plot1.png plot2.png plot3.png plot4.png
+
+Bijie@Bijie-PC MINGW64 ~/Documents/GitHub/ExData_Plotting1 (master)
+
+$ git commit -m "png file upload"
+[master 1057271] png file upload
+ 4 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 plot1.png
+ create mode 100644 plot2.png
+ create mode 100644 plot3.png
+ create mode 100644 plot4.png
+
+Bijie@Bijie-PC MINGW64 ~/Documents/GitHub/ExData_Plotting1 (master)
+
+# check remotes: 
+$ git remote -v
+origin  git@github.com:BBie/ExData_Plotting1.git (fetch)
+origin  git@github.com:BBie/ExData_Plotting1.git (push)
+rdpeng  https://github.com/rdpeng/ExData_Plotting1.git (fetch)
+rdpeng  https://github.com/rdpeng/ExData_Plotting1.git (push)
+
+Bijie@Bijie-PC MINGW64 ~/Documents/GitHub/ExData_Plotting1 (master)
+$ git push -u origin master
+To https://github.com/BBie/ExData_Plotting1.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/BBie/ExData_Plotting1.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Bijie@Bijie-PC MINGW64 ~/Documents/GitHub/ExData_Plotting1 (master)
+$ git pull --rebase origin master
+From https://github.com/BBie/ExData_Plotting1
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> origin/master
+First, rewinding head to replay your work on top of it...
+Applying: png file upload
+
+Bijie@Bijie-PC MINGW64 ~/Documents/GitHub/ExData_Plotting1 (master)
+$ git push -u origin master
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 15.17 KiB | 0 bytes/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To https://github.com/BBie/ExData_Plotting1.git
+   39f4b4e..09aa770  master -> master
+Branch master set up to track remote branch master from origin.
+
+Bijie@Bijie-PC MINGW64 ~/Documents/GitHub/ExData_Plotting1 (master)
 
 
-
-$ cd Documents/GitHub/Plotting
-
-
-git add plot1.png
-git add plot2.png
-git add plot3.png
-git add plot4.png
-git commit -m "add png file"
-git remote add origin https://github.com/BBie/Plot.git
+# important: <pull> before <push>
+git pull --rebase origin master
+# then push:
 git push -u origin master
 
-git remote add github git@github.com:BBie/Plot.git
+
+
